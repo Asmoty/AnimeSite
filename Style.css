@@ -343,6 +343,10 @@ body{
 }
 
 @media (max-width:768px){
+    body{
+        display: flex;
+        margin: 1.5rem;
+    }
 
     #menu-btn{
         display: inline-block;
@@ -350,10 +354,10 @@ body{
 
     .header .navbar{
         position: absolute;
-        top: 100%; right: -100%;
-        background: #fff;
+        top: 130%; right: -100%;
+        background: var(--black);
         width: 30rem;
-        height: calc(100vh - 9.5rem);
+        height: calc(50vh - 9.5rem);
     }
 
     .header .navbar.active{
@@ -361,11 +365,16 @@ body{
     }
 
     .header .navbar a{
-        color: var(--black);
+        color: #fff;
         display: block;
         margin: 1.5rem;
         padding: .5rem;
         font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .navbar {
+        border-radius: 10px; 
     }
 
     .header .search-form{
@@ -380,15 +389,22 @@ body{
     
     .main-image img {
         height: 400px; /* Definindo uma altura fixa para a imagem principal */
+        margin-bottom: 270px;
     }
 
     .thumbnails {
+        position: absolute;
         display: flex;
         flex-direction: row;
-        width: 13rem;
-        justify-content: center;
-        align-items: center;
+        width: 11rem;
+        margin-top: 55rem;
+        right: 37rem;
 }    
+
+.thumbnails img {
+    height: 50px; /* Definindo uma altura fixa para as miniaturas */
+    margin-left: 5px;
+}
 
 .overlay h2 {
     position: absolute;
@@ -401,6 +417,7 @@ body{
 .overlay p {
     margin: 100px 10px;
     font-size: 10px;
+    margin-bottom: 50rem;
 }
 
 .overlay a {
@@ -414,6 +431,12 @@ body{
     font-size: 1.2em;
     letter-spacing: 2px;
     word-spacing: 20px;
+}
+
+.typing-container {
+    font-size: 3rem;
+    color: #ffffff;
+    bottom: 5rem;
 }
 
 }
