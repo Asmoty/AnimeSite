@@ -2,20 +2,24 @@ let navbar = document.querySelector('.navbar');
 
 document.querySelector('#menu-btn').onclick = () =>{
     searchForm.classList.remove('active');
+    navbar.classList.toggle('active');
 }
 
 let searchForm = document.querySelector('.search-form');
 
 document.querySelector('#search-btn').onclick = () =>{
     searchForm.classList.toggle('active');
+    navbar.classList.remove('active');
 }
 
 window.onscroll = () =>{
     searchForm.classList.remove('active');
+    navbar.classList.remove('active');
 }
 
 document.querySelector(".panel").onclick = () =>{
     searchForm.classList.remove('active');
+    navbar.classList.remove('active');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -60,7 +64,7 @@ function updateTime() {
             zeroPadding(now.getSeconds(), 2);
 
     document.getElementById("date").innerText =
-            now.getDate() + "/" +
+            zeroPadding(now.getDate(), 2) + "/" +
             zeroPadding(now.getMonth() + 1, 2) + "/" +
             zeroPadding(now.getFullYear(), 2) + " " +
             WEEK[now.getDay()];

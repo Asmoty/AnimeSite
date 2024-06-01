@@ -203,7 +203,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     display: flex;
     flex-direction: column;
@@ -230,8 +230,9 @@ body{
 }
 
 .overlay p {
+    font-family: 'Bebas Neue', sans-serif;
     margin: 100px 100px;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     user-select: none;
 }
@@ -286,6 +287,7 @@ body{
     font-size: 5rem;
     color: #ffffff;
     bottom: 1rem;
+    user-select: none;
 }
 
 
@@ -381,29 +383,41 @@ body{
         width: 90%;
         right: 2rem;
     }
+
+    .panel{
+        margin-bottom: 270px;
+    }
     
     .main-image {
-        position: relative;
         width: 50rem;
     }
     
     .main-image img {
         height: 400px; /* Definindo uma altura fixa para a imagem principal */
-        margin-bottom: 270px;
     }
 
     .thumbnails {
         position: absolute;
         display: flex;
         flex-direction: row;
-        width: 11rem;
+        width: 90%;
+        left: 0.5rem;
         margin-top: 55rem;
         right: 37rem;
 }    
 
+.border-thumbnails {
+    width: 103%;
+    height: 0.7px; /* Ajuste a altura da borda */
+    background-color: rgb(78, 78, 79); /* Ajustar a cor da borda */
+    position: absolute;
+    bottom: -5px; /* Ajustar a posição da borda */
+    left: 0;
+}
+
 .thumbnails img {
     height: 50px; /* Definindo uma altura fixa para as miniaturas */
-    margin-left: 5px;
+    margin-left: 5px;;
 }
 
 .overlay h2 {
@@ -416,8 +430,8 @@ body{
 
 .overlay p {
     margin: 100px 10px;
-    font-size: 10px;
-    margin-bottom: 50rem;
+    font-size: 15px;
+    margin-bottom: 15rem;
 }
 
 .overlay a {
@@ -436,7 +450,7 @@ body{
 .typing-container {
     font-size: 3rem;
     color: #ffffff;
-    bottom: 5rem;
+    bottom: 15rem;
 }
 
 }
