@@ -134,3 +134,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Texto AutoDigita + Saudação End
+
+// Adiciona a borda ao item selecionado Stard
+
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.thumbnails img.clickable');
+    
+    images.forEach(image => {
+        image.addEventListener('click', function() {
+            // Remove a classe 'selected' de todas as imagens
+            images.forEach(img => img.classList.remove('selected'));
+            
+            // Adiciona a classe 'selected' à imagem clicada
+            this.classList.add('selected');
+        });
+    });
+});
+
+// Adiciona a borda ao item selecionado End

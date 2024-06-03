@@ -277,6 +277,10 @@ body{
 .thumbnails img:hover {
     transform: scale(1.05);
 }
+
+.thumbnails img.selected {
+    border: 3px solid red; /* Adiciona a borda ao item selecionado */
+}
 /* Panel Gallery End*/
 
 /* Texto AutoDigita Start*/
@@ -400,24 +404,24 @@ body{
         position: absolute;
         display: flex;
         flex-direction: row;
-        width: 90%;
-        left: 0.5rem;
+        width: 360px;
+        left: 4px;
         margin-top: 55rem;
-        right: 37rem;
 }    
 
+.thumbnails img {
+    height: 40px; /* Definindo uma altura fixa para as miniaturas */
+    margin-left: 5px;
+    
+}
+
 .border-thumbnails {
-    width: 103%;
+    width: 102%;
     height: 0.7px; /* Ajuste a altura da borda */
     background-color: rgb(78, 78, 79); /* Ajustar a cor da borda */
     position: absolute;
     bottom: -5px; /* Ajustar a posição da borda */
     left: 0;
-}
-
-.thumbnails img {
-    height: 50px; /* Definindo uma altura fixa para as miniaturas */
-    margin-left: 5px;;
 }
 
 .overlay h2 {
