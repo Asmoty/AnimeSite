@@ -17,42 +17,92 @@ window.onscroll = () =>{
     navbar.classList.remove('active');
 }
 
-document.querySelector(".panel").onclick = () =>{
+document.querySelector(".list").onclick = () =>{ 
     searchForm.classList.remove('active');
     navbar.classList.remove('active');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const thumbnails = document.querySelectorAll('.thumbnails img');
-    const mainImage = document.getElementById('main-img');
-    const imageTitle = document.getElementById('image-title');
-    const imageDescription = document.getElementById('image-description');
-    const imageLink = document.getElementById('panel_botao');
-    const maxWords = 200; // Número máximo de palavras permitidas na descrição
+document.querySelector(".thumbnail").onclick = () =>{ 
+    searchForm.classList.remove('active');
+    navbar.classList.remove('active');
+}
 
-    const truncateText = (text, maxWords) => {
-        const words = text.split(' ');
-        if (words.length > maxWords) {
-            return words.slice(0, maxWords).join(' ') + '...';
-        }
-        return text;
-    };
+//Slider
+let items = document.querySelectorAll('.slider .list .item');
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let thumbnails = document.querySelectorAll('.thumbnail .item');
 
-    // Inicializar a descrição com limite de palavras
-    imageDescription.textContent = truncateText(imageDescription.textContent, maxWords);
+//Config param
+let countItem = items.length;
+let itemActive = 0;
 
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', () => {
-            mainImage.src = thumbnail.src;
-            imageTitle.textContent = thumbnail.getAttribute('data-title');
-            const description = thumbnail.getAttribute('data-description');
-            imageDescription.textContent = truncateText(description, maxWords);
-            imageLink.href = thumbnail.getAttribute('data-link');
+//event next click
+next.onclick = function(){
+    itemActive = itemActive + 1;
+    if(itemActive >= countItem){
+        itemActive = 0;
+    }
+    showSlider();
+}
+
+//event prev click
+prev.onclick = function(){
+    itemActive = itemActive - 1;
+    if(itemActive < 0){
+        itemActive = countItem -1;
+    }
+    showSlider();
+}
+
+//auto run slider
+let refreshInterval = setInterval(() => {
+    next.click();
+}, 5000)
+
+function showSlider(){
+    //Remove item active old
+    let itemActiveOld = document.querySelector('.slider .list .item.active');
+    let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+    itemActiveOld.classList.remove('active');
+    thumbnailActiveOld.classList.remove('active');
+
+    //Active new item
+    items[itemActive].classList.add('active');
+    thumbnails[itemActive].classList.add('active');
+}
+
+//click thumbnail
+thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener('click', () => {
+        itemActive = index;
+        showSlider();
+    })
+})
+
+// Limite de caracteres Slider Stard
+document.addEventListener('DOMContentLoaded', function() {
+    const maxLengthH2 = 20; // Limite de caracteres para h2
+    const maxLengthP = 500; // Limite de caracteres para p
+
+    function truncateText(selector, maxLength) {
+        const elements = document.querySelectorAll(selector);
+        console.log(`Truncating text for selector: ${selector}`);
+        elements.forEach(element => {
+            console.log(`Original text: ${element.textContent}`);
+            if (element.textContent.length > maxLength) {
+                element.textContent = element.textContent.slice(0, maxLength) + '...';
+                console.log(`Truncated text: ${element.textContent}`);
+            }
         });
-    });
+    }
+
+    truncateText('.anime-name', maxLengthH2);
+    truncateText('.anime-description', maxLengthP)
 });
+// Limite de caracteres Slider End]
 
-
+//Data e Hora Start
 const WEEK = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB"];
 
 function updateTime() {
@@ -77,78 +127,4 @@ function zeroPadding(num, digit) {
     return String(num).padStart(digit, '0');
 }
 
-// Texto AutoDigita + Saudação Start
-document.addEventListener('DOMContentLoaded', () => {
-    const typedTextSpan = document.getElementById('typed-text');
-    const typingDelay = 100;
-    const erasingDelay = 20;
-    const newTextDelay = 2000; // Atraso entre o texto atual e o próximo
-    let textArray = [];
-    let textArrayIndex = 0;
-    let charIndex = 0;
-
-    function getCurrentGreeting() {
-        const now = new Date();
-        const hours = now.getHours();
-        if (hours < 12) {
-            return "Bom dia!";
-        } else if (hours < 18) {
-            return "Boa tarde!";
-        } else {
-            return "Boa noite!";
-        }
-    }
-
-    function type() {
-        if (charIndex < textArray[textArrayIndex].length) {
-            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(type, typingDelay);
-        } else {
-            setTimeout(erase, newTextDelay);
-        }
-    }
-
-    function erase() {
-        if (charIndex > 0) {
-            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(erase, erasingDelay);
-        } else {
-            textArrayIndex++;
-            if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-            setTimeout(type, typingDelay + 1100);
-        }
-    }
-
-    function startTypingEffect() {
-        const greeting = getCurrentGreeting();
-        textArray = [greeting, "Bem-vindo ao Your'Nime!",
-        "Espero que você tenha um ótimo dia, e...", "Que aproveite os animes!"]; // Texto de saudação + Algum outro texto
-        if (textArray.length) setTimeout(type, newTextDelay + 250);
-    }
-
-    startTypingEffect();
-});
-
-
-
-// Texto AutoDigita + Saudação End
-
-// Adiciona a borda ao item selecionado Stard
-
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.thumbnails img.clickable');
-    
-    images.forEach(image => {
-        image.addEventListener('click', function() {
-            // Remove a classe 'selected' de todas as imagens
-            images.forEach(img => img.classList.remove('selected'));
-            
-            // Adiciona a classe 'selected' à imagem clicada
-            this.classList.add('selected');
-        });
-    });
-});
-
-// Adiciona a borda ao item selecionado End
+//Data e Hora End

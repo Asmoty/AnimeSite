@@ -43,11 +43,10 @@
     </div>
 
     <!-- Time and Date Start -->
-
-     <div class="clock">
-         <p id="date"></p>
-         <p id="time"></p>
-     </div>
+    <div class="clock">
+        <p id="date"></p>
+        <p id="time"></p>
+    </div>
     <!-- hora e data End -->
 
 </header>
@@ -55,56 +54,84 @@
 
 <!-- header section end -->
 
-<!-- Image Gallery start -->
-<div class="panel">
-    <div class="main-image">
-        <img src="Gallery_Imagens/image 1.png" id="main-img">
-        <div class="overlay">
-            <h2 id="image-title">Koe no Katachi</h2>
-            <p id="image-description">
-                Uma estudante com problemas de audição sofre com o bullying dos colegas e decide mudar de escola. 
-                Anos mais tarde, um dos rapazes que a importunavam resolve se redimir.</p>
-            <a href="#" id="panel_botao">
-                <button>ASSISTIR AGORA</button>
-            </a>
+<!-- Slider Gallery start -->
+<div class="slider">
+
+    <div class="list">
+        <div class="item active">
+            <img src="Gallery_Imagens/image 1.png">
+            <div class="content">
+                <p class="anime-title">A Silent Voice</p>
+                <h2 class="anime-name">Koe no Katachi</h2>
+                <p class="anime-description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum saepe optio adipisci quisquam assumenda hic, ad veritatis quos! Perspiciatis nam mollitia sint maiores dolorem inventore ad alias repudiandae aliquam nostrum!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt vel fugit blanditiis, quidem et maiores ad? Labore deleniti maiores iste tempora libero. Deserunt omnis explicabo cupiditate accusantium dolorem nisi numquam.
+                </p>
+                <a class="slider-btn" href="#"><strong>ASSISTIR AGORA</strong></a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="Gallery_Imagens/image 2.jpg">
+            <div class="content">
+                <p class="anime-title">My Neighbor Totoro</p>
+                <h2 class="anime-name">Tonari no Totoro</h2>
+                <p class="anime-description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum saepe optio adipisci quisquam assumenda hic, ad veritatis quos! Perspiciatis nam mollitia sint maiores dolorem inventore ad alias repudiandae aliquam nostrum!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt vel fugit blanditiis, quidem et maiores ad? Labore deleniti maiores iste tempora libero. Deserunt omnis explicabo cupiditate accusantium dolorem nisi numquam.
+                </p>
+                <a class="slider-btn" href="#"><strong>ASSISTIR AGORA</strong></a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="Gallery_Imagens/image 3.jpg">
+            <div class="content">
+                <p class="anime-title">Spirited Away</p>
+                <h2 class="anime-name">Sen to Chihiro no Kamikakushi</h2>
+                <p class="anime-description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum saepe optio adipisci quisquam assumenda hic, ad veritatis quos! Perspiciatis nam mollitia sint maiores dolorem inventore ad alias repudiandae aliquam nostrum!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt vel fugit blanditiis, quidem et maiores ad? Labore deleniti maiores iste tempora libero. Deserunt omnis explicabo cupiditate accusantium dolorem nisi numquam.
+                </p>
+                <a class="slider-btn" href="#"><strong>ASSISTIR AGORA</strong></a>
+            </div>
+        </div>
+        <div class="item">
+            <img src="Gallery_Imagens/image 4.jpg">
+            <div class="content">
+                <p class="anime-title">Suzume no Tojimari</p>
+                <h2 class="anime-name">Suzume</h2>
+                <p class="anime-description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum saepe optio adipisci quisquam assumenda hic, ad veritatis quos! Perspiciatis nam mollitia sint maiores dolorem inventore ad alias repudiandae aliquam nostrum!
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt vel fugit blanditiis, quidem et maiores ad? Labore deleniti maiores iste tempora libero. Deserunt omnis explicabo cupiditate accusantium dolorem nisi numquam.
+                </p>
+                <a class="slider-btn" href="#"><strong>ASSISTIR AGORA</strong></a>
+            </div>
         </div>
     </div>
-    <div class="thumbnails">
-        <img class="clickable selected" src="Gallery_Imagens/image 1.png" data-title="Koe no Katachi" data-description="
-        Uma estudante com problemas de audição sofre com o bullying dos colegas e decide mudar de escola. 
-        Anos mais tarde, um dos rapazes que a importunavam resolve se redimir."
-        data-link="#">
 
-        <img class="clickable" src="Gallery_Imagens/image 2.jpg" data-title="Tonari No Totoro" data-description="
-        As irmãs Satsuki e Mei se mudam para o campo para ficar mais perto do hospital onde sua mãe está internada. 
-        Lá conhecem os Totoros, adoráveis criaturas místicas e alegres, que só podem ser vistas pelas crianças. 
-        Com eles, as duas irmãs viverão mágicas aventuras no campo."
-        data-link="#">
+<!-- button -->
+     <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+     </div>
 
-        <img class="clickable" src="Gallery_Imagens/image 3.jpg" data-title="A Viagem de Chihiro" data-description="
-        Chihiro e seus pais estão se mudando para uma cidade diferente. 
-        A caminho da nova casa, o pai decide pegar um atalho. Eles se deparam com uma mesa repleta de comida, embora ninguém esteja por perto. 
-        Chihiro sente o perigo, mas seus pais começam a comer. Quando anoitece, eles se transformam em porcos. Agora, apenas Chihiro pode salvá-los."
-        data-link="#">
-
-        <img class="clickable" src="Gallery_Imagens/image 4.jpg" data-title="Suzume" data-description="
-        Uma garota de 17 anos chamada Suzume descobre uma porta misteriosa nas montanhas, e logo outras começam a aparecer por todo o Japão. 
-        Quando abertas, elas trazem desastre e destruição, e apenas Suzume pode fechá-las novamente."
-        data-link="#">
-
-        <div class="border-thumbnails"></div>
+ <!-- thumbnail -->
+  <div class="thumbnail">
+    <div class="item active">
+        <img src="Gallery_Imagens/image 1.png">
     </div>
+    <div class="item">
+        <img src="Gallery_Imagens/image 2.jpg">
+    </div>
+    <div class="item">
+        <img src="Gallery_Imagens/image 3.jpg">
+    </div>
+    <div class="item">
+        <img src="Gallery_Imagens/image 4.jpg">
+    </div>
+  </div>
 </div>
+<!-- Slider Gallery end -->
 
-<!-- Image Gallery end -->
-
-<!-- Texto AutoDigita Start -->
-<div class="typing-container">
-    <span id="typed-text" style="font-family: 'Bebas Neue', sans-serif;"></span>
-</div>
-
-
-<!-- Texto AutoDigita End -->
 
 
 
