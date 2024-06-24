@@ -167,6 +167,8 @@ section{
 body{
     display: flex;
     background-color: var(--bg);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Slider Gallery Start*/
